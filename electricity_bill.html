@@ -1,0 +1,78 @@
+<html>
+    <head>
+       <style>
+        h1{
+            background-color: orange;
+            text-align:center;
+            width:12cm;
+            position: absolute;
+            left:11.3cm;
+            padding:15px;
+            top:0.1cm;
+            border-radius: 7px;
+        }
+        #abc
+        {
+             background-color:yellow;
+             position:absolute;
+             left:11cm;
+             top:2cm;
+             padding:5px;
+             border-radius: 10px;
+        }
+        #def
+        {
+              background-color:whitesmoke;
+              position:absolute;
+              left:11cm;
+              top:4cm;
+              padding:5px;
+              border-radius: 10px;
+        }
+        #ghi
+        {
+              background-color:yellow;
+              position:absolute;
+              left:11cm;
+              top:6cm;
+              padding:5px;
+              border-radius:10px;
+        }
+        #jkl
+        {
+              background-color:whitesmoke;
+              position:absolute;
+              left:11cm;
+              top:8cm;
+              padding:5px;
+              border-radius:10px;
+        }
+        #mno
+        {
+            background-color:orange;
+            position:absolute;
+            top:10cm;
+            left:11cm;
+            padding:5px;
+            width:12.6cm;
+            border-radius:10px;
+        }
+        .frm
+        {
+             position:absolute;
+             top:1.2cm;
+        }
+
+       </style>
+    </head>
+    <body>
+        <h1>ELECTRICITY BILL</h1>
+        <form class="frm" action="electricity_bill.php" method="post">
+            <span id="abc"><pre>Enter the consumer number:                 <input type="text" name="cust_num" required></pre></span>
+            <span id="def"><pre>Enter the name of consumer:                <input type="text" name="cust_name" required></pre></span>
+            <span id="ghi"><pre>Enter the previous reading:                <input type="number" name="prev_read" required></pre></span>
+            <span id="jkl"><pre>Enter the present reading:                 <input type="number" name="pres_read" required></pre></span>
+            <span id="mno"><pre>                              <button type="submit">Submit</button>            </pre></span></span>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stopwatch</title>
+    <style>
+        #timer 
+        {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        button 
+        {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="timer">00:00:00</div>
+    <button id="startBtn">Start</button>
+    <button id="pauseBtn">Pause</button>
+    <button id="resetBtn">Reset</button>
+
+    <script>
+        var timerElement = document.getElementById("timer");
+        var startBtn = document.getElementById("startBtn");
+        var pauseBtn = document.getElementById("pauseBtn");
+        var resetBtn = document.getElementById("resetBtn");
+
+        var intervalId;
+        var seconds = 0, minutes = 0, hours = 0;
+
+        function startTimer() 
+        {
+            intervalId = setInterval(updateTimer, 1000);
+        }
+        function updateTimer()
+        {
+            seconds++;
+            if (seconds === 60)
+            {
+                seconds = 0;
+                minutes++;
+                if (minutes === 60) 
+                {
+                    minutes = 0;
+                    hours++;
+                }
+            }
+            timerElement.textContent = formatTime(hours) + ":" + formatTime(minutes) + ":" + formatTime(seconds);
+        }
+
+        function formatTime(time) 
+        {
+            return time < 10 ? "0" + time : time;
+        }
+
+        function pauseTimer()
+        {
+            clearInterval(intervalId);
+        }
+
+        function resetTimer() 
+        {
+            clearInterval(intervalId);
+            seconds = 0;
+            minutes = 0;
+            hours = 0;
+            timerElement.textContent = "00:00:00";
+        }
+
+        startBtn.addEventListener("click", startTimer);
+        pauseBtn.addEventListener("click", pauseTimer);
+        resetBtn.addEventListener("click", resetTimer);
+    </script>
+</body>
+</html>
